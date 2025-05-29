@@ -5,5 +5,5 @@ services:
     buildCommand: ""
     startCommand: gunicorn app:app
     envVars:
-      - key: PYTHON_VERSION
+      - key: PORT
         value: 3.10
