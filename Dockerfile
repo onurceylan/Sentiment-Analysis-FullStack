@@ -11,5 +11,5 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Flask uygulaması çalışsın
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:$PORT", "app:app"]
+CMD exec gunicorn app:app --bind 0.0.0.0:$PORT --workers 4
 
