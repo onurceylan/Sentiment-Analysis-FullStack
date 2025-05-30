@@ -5,12 +5,12 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Sistem bağımlılıkları
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    python3-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#    build-essential \
+#    gcc \
+#    python3-dev \
+#    && apt-get clean \
+#    && rm -rf /var/lib/apt/lists/*
 
 # requirements.txt dosyasını ayrı kopyala (önbellek avantajı için)
 COPY requirements.txt .

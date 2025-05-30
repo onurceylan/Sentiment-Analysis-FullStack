@@ -48,7 +48,7 @@ def predict():
 
     # Boş yorum kontrolü
     if not review:
-        return render_template("index.html", error="Lütfen bir yorum girin!", review=review)
+        return render_template("index.html", error="please make a comment!", review=review)
 
     # Metni vektöre çevir ve tahmin yap
     try:
@@ -57,7 +57,7 @@ def predict():
         label = "Positive" if pred == 1 else "Negative"
         return render_template("index.html", review=review, prediction_text=label)
     except Exception as e:
-        return render_template("index.html", error=f"Tahmin yapılırken hata oluştu: {str(e)}", review=review)
+        return render_template("index.html", error=f"an error occured when prediction was made: {str(e)}", review=review)
 
 
 if __name__ == "__main__":

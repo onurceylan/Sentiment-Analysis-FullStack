@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-    <h2>🎬 IMDb Sentiment Analysis</h2>
+    <h2>🎬 IMDB Sentiment Analysis</h2>
     <form action="/predict" method="post">
         <textarea name="review" placeholder="Write your comment here...">{{ review or '' }}</textarea><br>
         <button type="submit">Tahmin Et</button>
@@ -45,13 +45,13 @@
 
     {% if prediction_text %}
         <div class="result">
-            <strong>Sonuç:</strong> {{ prediction_text }}
+            <strong>result:</strong> {{ prediction_text }}
         </div>
     {% endif %}
 
     {% if error %}
         <div class="error">
-            <strong>Hata:</strong> {{ error }}
+            <strong>Error:</strong> {{ error }}
         </div>
     {% endif %}
 </body>
