@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sentiment
-          image: <dockerhub_user>/sentiment-app:latest
+          image: onurceylan7/sentiment-app:latest
           ports:
             - containerPort: 5000
           env:
