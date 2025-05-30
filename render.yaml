@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: flask-sentiment
-    runtime: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    envVars:
-      - key: PORT
-        value: 3.10
