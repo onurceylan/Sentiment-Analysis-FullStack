@@ -1,6 +1,23 @@
 from flask import Flask, render_template, request
 import pickle
 import os
+import gdown
+
+def download_models():
+    model_url = "https://drive.google.com/file/d/125EI9dUj_wxtLuTBJGTXcGfAyVWk7op_/view?usp=drive_link"
+    vec_url = "https://drive.google.com/file/d/1Q8_PKM-cVY-5M8Fs1gHrDVyMXVI14M_y/view?usp=sharing"
+
+    try:
+        if not os.path.exists("model.pkl"):
+            print("Downloading model...")
+            gdown.download(model_url, "model.pkl", quiet=False)
+
+        if not os.path.exists("vectorizer.pkl"):
+            print("Downloading vectorizer...")
+            gdown.download(vec_url, "vectorizer.pkl", quiet=False)
+    except FileExistsError:
+        print("Model veya vectorizer dosyası indirilemedi!")
+        exit(1)
 
 # Flask uygulamasını başlat
 app = Flask(__name__)
