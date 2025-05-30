@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: sentiment-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: sentiment
@@ -13,10 +13,15 @@ spec:
         app: sentiment
     spec:
       containers:
-        - name: sentiment
-          image: onurceylan7/sentiment-app:latest
-          ports:
-            - containerPort: 5000
-          env:
-            - name: PORT
-              value: "5000"
+      - name: sentiment-app
+        image: onurceylan.azurecr.io/sentiment:v1
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+
