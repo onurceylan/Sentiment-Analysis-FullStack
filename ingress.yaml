@@ -1,0 +1,22 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: sentiment-ingress
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   tls:
+#   - hosts:
+#     - sentiment.onurceylan.com
+#     secretName: sentiment-tls
+#   rules:
+#   - host: sentiment.onurceylan.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: sentiment-service
+#             port:
+#               number: 80
